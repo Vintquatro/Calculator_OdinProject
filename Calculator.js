@@ -55,6 +55,7 @@ function handleButtonClick(event) {
             }
             lastOperator = buttonText;
             currentValue = "";
+            updateDisplay(operator1 + " " + lastOperator);
             isResultDisplayed = false;
         }
     }
@@ -81,6 +82,7 @@ document.addEventListener('keydown', function (event) {
                 operator1 = parseFloat(currentValue);
             } else if (lastOperator) {
                 operator1 = performOperation(operator1, parseFloat(currentValue), lastOperator);
+                updateDisplay(operator1 + " " + event.key);
             }
             lastOperator = event.key;
             currentValue = "";
