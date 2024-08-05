@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Ensure the body uses flex to center the calculator and title */
+body {
+    display: flex;
+    flex-direction: column; /* Arrange title and calculator vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    font-family: 'Helvetica', Arial, sans-serif;
+    background: #99ecff;
+    background-image:
+        radial-gradient(at 94% 39%, hsla(294,86%,78%,1) 0px, transparent 50%),
+        radial-gradient(at 48% 54%, hsla(311,60%,79%,1) 0px, transparent 50%),
+        radial-gradient(at 43% 7%, rgb(252, 54, 97) 0px, transparent 50%),
+        radial-gradient(at 18% 95%, hsla(282,99%,79%,1) 0px, transparent 50%),
+        radial-gradient(at 99% 27%, hsla(267,69%,76%,1) 0px, transparent 50%),
+        radial-gradient(at 5% 46%, hsla(276,68%,69%,1) 0px, transparent 50%),
+        radial-gradient(at 78% 69%, rgb(182, 86, 220) 0px, transparent 50%);
+    animation: meshGradientAnimation 2s radial infinite;
+}
+
+#title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    font-weight: 800; /* Extra bold */
+    font-size: 4rem; /* Large size */
+    color: #fca8ff; /* Dark grey color */
+    margin: 0 0 20px 0; /* Remove top margin and add bottom margin */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+    opacity: 0.7;
+    padding-bottom: 30px;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 320px;
+    background-color: #272727;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(7, 7, 7, 0.5);
+    position: relative; /* Ensures the calculator is positioned above the background */
+}
+
+.display {
+    grid-column: span 4;
+    height: 80px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    background-color: #b1b1b1;
+    color: #fff;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Styling for buttons */
+.calculator button {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #555;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.calculator button:active {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+    transform: translateY(3px);
+}
+
+.calculator button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #666, #444);
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+.calculator .span-two {
+    grid-column: span 2;
+}
+
+/* Fixed positioning for the GitHub link */
+.github-link {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6); /* Dark grey with some opacity */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 800; 
+    z-index: 20; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.github-logo {
+    width: 40px; 
+    height: 40px; 
+    margin-right: 8px; 
+    opacity: 0.6;
+}
+
+.github-text {
+    font-size: 16px; 
+}
+
+/* Optional: Animation for background gradient */
+@keyframes meshGradientAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
